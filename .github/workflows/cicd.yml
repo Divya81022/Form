@@ -1,11 +1,9 @@
 name: CICD
- on:
-  push: 
+ on: push
  branches: - deploy-to-ec2
   jobs:
    build:
-    runs-on:
-     ubuntu-latest
+    runs-on: ubuntu-latest
       steps:
        - name: Checkout Source
         uses: actions/checkout@v3
