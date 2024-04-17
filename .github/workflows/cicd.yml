@@ -1,9 +1,8 @@
 name: CICD
-
  on:
   push: 
  branches: 
- - deploy-to-ec2
+ - main branch
   jobs:
    build:
     runs-on: ubuntu-latest
@@ -16,7 +15,7 @@ name: CICD
            run: docker build -t divya384/reactjs-app .
             - name: Publish image to docker hub 
             run: docker push divya384/reactjs-app:latest 
-            
+
             deploy:
              needs: build 
              runs-on: aws-ec2
